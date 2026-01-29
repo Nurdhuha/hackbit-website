@@ -14,8 +14,8 @@ interface PricingCardProps {
 export default function PricingCard({ name, price, description, features, highlight, badge }: PricingCardProps) {
     return (
         <div className={`relative flex flex-col p-8 rounded-3xl border ${highlight
-                ? "bg-neutral-900 border-brand-green shadow-[0_0_30px_rgba(57,255,20,0.1)] scale-105 z-10"
-                : "bg-black border-neutral-800 hover:border-neutral-700"
+            ? "bg-neutral-900 border-brand-green shadow-[0_0_30px_rgba(57,255,20,0.1)] scale-105 z-10"
+            : "bg-black border-neutral-800 hover:border-neutral-700"
             }`}>
             {highlight && badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-green text-black font-bold text-xs rounded-full uppercase tracking-wider">
@@ -27,10 +27,12 @@ export default function PricingCard({ name, price, description, features, highli
                 <h3 className={`text-lg font-medium mb-2 ${highlight ? "text-brand-green" : "text-white"}`}>
                     {name}
                 </h3>
-                <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">{price}</span>
-                    {price !== "Hubungi" && <span className="text-neutral-500">/project</span>}
-                </div>
+                {price && (
+                    <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-bold text-white">{price}</span>
+                        {price !== "Hubungi" && <span className="text-neutral-500">/project</span>}
+                    </div>
+                )}
                 <p className="mt-4 text-sm text-neutral-400">
                     {description}
                 </p>

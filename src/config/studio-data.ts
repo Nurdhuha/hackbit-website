@@ -41,13 +41,6 @@ export const studioData = {
             image: "", // Placeholder
             stats: ["Users: 500+", "Efficiency: +80%"],
             category: "Project Riil"
-        },
-        {
-            title: "Smart Inventory System",
-            description: "Aplikasi gudang berbasis PWA untuk toko retail.",
-            image: "", // Placeholder
-            stats: ["Offline Mode", "Sync: < 2s"],
-            category: "Personal Project"
         }
     ],
     pricing: [
@@ -67,10 +60,10 @@ export const studioData = {
             badge: "Best Value"
         },
         {
-            name: "Custom",
-            price: "Hubungi",
+            name: "Enterprise",
+            price: "",
             description: "Untuk sistem kompleks dan integrasi khusus.",
-            features: ["Custom Database", "Payment Gateway", "Dashboard Admin", "Mobile Apps (PWA)"],
+            features: ["AI Automation/AI Agents", "Custom Database", "Payment Gateway", "Dashboard Admin", "Mobile Apps (PWA)"],
             highlight: false
         }
     ],
