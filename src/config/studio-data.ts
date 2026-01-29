@@ -29,20 +29,20 @@ export const studioData = {
     },
     portfolio: [
         {
-            title: "Katering Bu Rudy",
+            title: "Dapur Berkah Catering",
             description: "Platform katering online dengan manajemen pesanan real-time.",
             image: "", // Placeholder for generation
             stats: ["Lighthouse Score: 100/100", "Loading: 0.8s"],
             category: "Concept Project",
-            demoUrl: "" // Add demo URL here, e.g., "https://katering-burudy.vercel.app"
+            demoUrl: "https://dapur-berkah-catering-website.vercel.app/"
         },
         {
-            title: "Sistem Manajemen UKIM",
-            description: "Digitalisasi administrasi kampus dan pendaftaran mahasiswa.",
+            title: "Propnest Property",
+            description: "Website untuk properti dengan fitur pemesanan online dan manajemen properti.",
             image: "", // Placeholder
             stats: ["Users: 500+", "Efficiency: +80%"],
             category: "Project Riil",
-            demoUrl: "" // Add demo URL here
+            demoUrl: "https://propnest-website.vercel.app/"
         }
     ],
     pricing: [
