@@ -31,7 +31,7 @@ export const studioData = {
         {
             title: "Dapur Berkah Catering",
             description: "Platform katering online dengan manajemen pesanan real-time.",
-            image: "", // Placeholder for generation
+            image: "/dapur-page.png",
             stats: ["Lighthouse Score: 100/100", "Loading: 0.8s"],
             category: "Concept Project",
             demoUrl: "https://dapur-berkah-catering-website.vercel.app/"
@@ -39,7 +39,7 @@ export const studioData = {
         {
             title: "Propnest Property",
             description: "Website untuk properti dengan fitur pemesanan online dan manajemen properti.",
-            image: "", // Placeholder
+            image: "/propnest-page.png",
             stats: ["Users: 500+", "Efficiency: +80%"],
             category: "Project Riil",
             demoUrl: "https://propnest-website.vercel.app/"
