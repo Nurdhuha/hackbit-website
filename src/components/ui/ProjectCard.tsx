@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
     title: string;
@@ -7,9 +7,10 @@ interface ProjectCardProps {
     image?: string;
     stats: string[];
     category: string;
+    demoUrl?: string;
 }
 
-export default function ProjectCard({ title, description, image, stats, category }: ProjectCardProps) {
+export default function ProjectCard({ title, description, image, stats, category, demoUrl }: ProjectCardProps) {
     return (
         <div className="group relative rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-brand-green/50 transition-colors duration-300">
             {/* Image / Mockup Area */}
@@ -44,14 +45,27 @@ export default function ProjectCard({ title, description, image, stats, category
                     {description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mt-auto">
+                <div className="flex flex-wrap gap-2 mb-4">
                     {stats.map((stat, i) => (
                         <span key={i} className="text-[10px] uppercase font-mono px-2 py-1 rounded bg-neutral-800 text-neutral-300 border border-neutral-700">
                             {stat}
                         </span>
                     ))}
                 </div>
+
+                {demoUrl && (
+                    <a
+                        href={demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-brand-green text-black font-semibold text-sm rounded-lg hover:bg-brand-green/90 transition-colors"
+                    >
+                        <ExternalLink className="w-4 h-4" />
+                        Lihat Demo
+                    </a>
+                )}
             </div>
         </div>
     );
 }
+

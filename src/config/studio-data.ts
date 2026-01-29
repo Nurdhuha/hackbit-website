@@ -33,14 +33,16 @@ export const studioData = {
             description: "Platform katering online dengan manajemen pesanan real-time.",
             image: "", // Placeholder for generation
             stats: ["Lighthouse Score: 100/100", "Loading: 0.8s"],
-            category: "Concept Project"
+            category: "Concept Project",
+            demoUrl: "" // Add demo URL here, e.g., "https://katering-burudy.vercel.app"
         },
         {
             title: "Sistem Manajemen UKIM",
             description: "Digitalisasi administrasi kampus dan pendaftaran mahasiswa.",
             image: "", // Placeholder
             stats: ["Users: 500+", "Efficiency: +80%"],
-            category: "Project Riil"
+            category: "Project Riil",
+            demoUrl: "" // Add demo URL here
         }
     ],
     pricing: [
