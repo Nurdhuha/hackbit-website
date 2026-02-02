@@ -43,6 +43,14 @@ export const studioData = {
             stats: ["Users: 500+", "Efficiency: +80%"],
             category: "Project Riil",
             demoUrl: "https://propnest-website.vercel.app/"
+        },
+        {
+            title: "Klinik Sehat Prima",
+            description: "Website klinik kesehatan modern dengan fitur pendaftaran online dan informasi layanan.",
+            image: "/klinik-page.png",
+            stats: ["Lighthouse Score: 100/100", "Loading: 0.7s"],
+            category: "Concept Project",
+            demoUrl: "https://klinik-sehat-prima.vercel.app/"
         }
     ],
     pricing: [
