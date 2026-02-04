@@ -18,7 +18,7 @@ export default function PortfolioShowcase() {
                     </div>
                 </FadeIn>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {studioData.portfolio.map((project, idx) => (
                         <FadeIn key={idx} delay={idx * 0.1}>
                             <ProjectCard {...project} />
