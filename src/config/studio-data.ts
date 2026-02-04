@@ -49,7 +49,7 @@ export const studioData = {
             description: "Website klinik kesehatan modern dengan fitur pendaftaran online dan informasi layanan.",
             image: "/klinik-page.png",
             stats: ["Lighthouse Score: 100/100", "Loading: 0.7s"],
-            category: "Concept Project",
+            category: "Project Riil",
             demoUrl: "https://klinik-sehat-prima.vercel.app/"
         }
     ],
