@@ -23,7 +23,7 @@ export default function FooterStudio() {
                                 height={32}
                                 className="w-8 h-8 rounded-full border border-white/10"
                             />
-                            <span>Hackbit<span className="text-brand-green">.Studio</span></span>
+                            <span>Hackbit<span className="text-brand-green"> Studio</span></span>
                         </Link>
                         <p className="text-neutral-500 text-sm max-w-xs">
                             Bikin landing page bisnis super cepat dengan loading di bawah 1 detik. Dipercaya 10+ bisnis lokal.

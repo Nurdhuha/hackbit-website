@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { studioData } from "@/config/studio-data";
 import CursorGlow from "@/components/ui/CursorGlow";
+import BottomBlur from "@/components/ui/BottomBlur";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CursorGlow />
+        <BottomBlur />
         {children}
         <script
           type="application/ld+json"

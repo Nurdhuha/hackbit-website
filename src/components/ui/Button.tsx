@@ -28,6 +28,18 @@ const Button = ({
     };
 
     if (href) {
+        const isAnchor = href.startsWith("#");
+        if (isAnchor) {
+            return (
+                <a
+                    href={href}
+                    className={`${baseStyles} ${variants[variant]} ${className}`}
+                    onClick={onClick}
+                >
+                    {children}
+                </a>
+            );
+        }
         return (
             <Link
                 href={href}

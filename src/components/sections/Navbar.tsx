@@ -12,10 +12,19 @@ import { studioData } from "@/config/studio-data";
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hidden, setHidden] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const { scrollY } = useScroll();
     const lastScrollY = useRef(0);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
+        // Toggle background based on scroll
+        if (latest > 50) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+
+        // Handle hide/show on scroll
         const diff = latest - lastScrollY.current;
         if (Math.abs(diff) > 50) {
             if (latest > lastScrollY.current && latest > 100) {
@@ -30,12 +39,12 @@ export default function Navbar() {
     return (
         <motion.nav
             variants={{
-                visible: { y: 0, opacity: 1 },
-                hidden: { y: -100, opacity: 0 },
+                visible: { y: 0, opacity: 1, pointerEvents: "auto" },
+                hidden: { y: -100, opacity: 0, pointerEvents: "none" },
             }}
             animate={hidden && !mobileMenuOpen ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="sticky top-0 z-50 w-full glass-dark transition-colors"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`fixed top-0 z-50 w-full ${isScrolled || mobileMenuOpen ? "glass-dark shadow-2xl" : "bg-transparent border-none"}`}
         >
             <Container>
                 <div className="flex h-16 items-center justify-between">
@@ -47,7 +56,7 @@ export default function Navbar() {
                             height={32}
                             className="w-8 h-8 rounded-full border border-white/10"
                         />
-                        <span>Hackbit<span className="text-brand-green">.Studio</span></span>
+                        <span>Hackbit<span className="text-brand-green"> Studio</span></span>
                     </Link>
 
                     {/* Desktop Nav */}

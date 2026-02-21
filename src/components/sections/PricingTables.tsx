@@ -5,7 +5,7 @@ import { studioData } from "@/config/studio-data";
 
 export default function PricingTables() {
     return (
-        <section id="pricing" className="py-24 bg-neutral-950">
+        <section id="pricing" className="py-24 bg-neutral-950 scroll-mt-20">
             <Container>
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>

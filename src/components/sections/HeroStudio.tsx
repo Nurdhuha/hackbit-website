@@ -24,7 +24,7 @@ export default function HeroStudio() {
     };
 
     return (
-        <section className="relative overflow-hidden py-24 sm:py-32 bg-black">
+        <section className="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32 bg-black">
             {/* 1. Cyber Grid Background */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <div
