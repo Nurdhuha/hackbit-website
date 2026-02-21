@@ -20,7 +20,7 @@ export default function CursorGlow() {
 
     return (
         <div
-            className="pointer-events-none fixed inset-0 z-30 overflow-hidden transition-opacity duration-300"
+            className="pointer-events-none fixed inset-0 z-30 overflow-hidden transition-opacity duration-300 hidden md:block"
             aria-hidden="true"
         >
             <div

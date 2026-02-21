@@ -43,7 +43,7 @@ export default function Navbar() {
                 hidden: { y: -100, opacity: 0, pointerEvents: "none" },
             }}
             animate={hidden && !mobileMenuOpen ? "hidden" : "visible"}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className={`fixed top-0 z-50 w-full ${isScrolled || mobileMenuOpen ? "glass-dark shadow-2xl" : "bg-transparent border-none"}`}
         >
             <Container>
