@@ -28,7 +28,7 @@ export default function HeroStudio() {
             {/* 1. Cyber Grid Background */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <div
-                    className="absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.1)_1px,transparent_1px)] bg-[size:40px_40px] animate-grid-scroll"
+                    className="absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.1)_1px,transparent_1px)] bg-size-[40px_40px] animate-grid-scroll"
                     style={{ maskImage: "linear-gradient(to bottom, transparent, black 90%)", WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 100%)" }}
                 />
             </div>
@@ -66,12 +66,12 @@ export default function HeroStudio() {
                                 ))}
                             </motion.h1>
 
-                            <p className="text-lg text-neutral-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            <p className="text-base sm:text-lg text-neutral-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                                 {studioData.hero.subheadline}
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                                <Button href={`https://wa.me/${studioData.global.whatsappNumber}`} variant="primary" className="w-full sm:w-auto !bg-brand-green !text-black hover:!bg-brand-green/90 font-bold border-none text-glow">
+                                <Button href={`https://wa.me/${studioData.global.whatsappNumber}`} variant="primary" className="w-full sm:w-auto bg-brand-green! text-black! hover:bg-brand-green/90! font-bold border-none text-glow">
                                     {studioData.global.ctas.consultation}
                                 </Button>
                                 <Button href="#portfolio" variant="outline" className="w-full sm:w-auto border-neutral-800 hover:border-brand-green hover:text-brand-green">
@@ -79,7 +79,7 @@ export default function HeroStudio() {
                                 </Button>
                             </div>
 
-                            <div className="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-neutral-500">
+                            {/* <div className="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-neutral-500">
                                 <div className="flex -space-x-2">
                                     {[1, 2, 3, 4].map(i => (
                                         <div key={i} className="w-8 h-8 rounded-full bg-neutral-800 border border-black flex items-center justify-center text-xs font-bold text-white">
@@ -88,7 +88,7 @@ export default function HeroStudio() {
                                     ))}
                                 </div>
                                 <p>{studioData.hero.socialProof}</p>
-                            </div>
+                            </div> */}
                         </FadeIn>
                     </div>
 
@@ -110,12 +110,12 @@ export default function HeroStudio() {
                                     </div>
                                 </div>
                                 {/* Screen Content */}
-                                <div className="aspect-[16/10] bg-neutral-950 rounded-b-lg overflow-hidden relative group">
+                                <div className="aspect-16/10 bg-neutral-950 rounded-b-lg overflow-hidden relative group">
                                     <div className="absolute inset-0 flex items-center justify-center flex-col">
                                         <span className="text-7xl font-bold text-neutral-800 group-hover:text-brand-green transition-colors duration-500">0.8s</span>
                                         <span className="text-neutral-600 mt-2 font-mono group-hover:text-brand-green/80">LCP Score</span>
                                     </div>
-                                    <div className="absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
+                                    <div className="absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.03)_1px,transparent_1px)] bg-size-[20px_20px]" />
                                 </div>
                             </div>
 

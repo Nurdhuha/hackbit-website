@@ -14,7 +14,7 @@ interface PricingCardProps {
 export default function PricingCard({ name, price, description, features, highlight, badge }: PricingCardProps) {
     return (
         <div className={`relative flex flex-col p-8 rounded-3xl border ${highlight
-            ? "bg-neutral-900 border-brand-green shadow-[0_0_30px_rgba(57,255,20,0.1)] scale-105 z-10"
+            ? "bg-neutral-900 border-brand-green shadow-[0_0_30px_rgba(118,253,15,0.1)] scale-105 z-10"
             : "bg-black border-neutral-800 hover:border-neutral-700"
             }`}>
             {highlight && badge && (
@@ -48,9 +48,9 @@ export default function PricingCard({ name, price, description, features, highli
             </ul>
 
             <Button
-                href={`https://wa.me/${studioData.global.whatsappNumber}?text=Halo%20Hackbit,%20saya%20tertarik%20paket%20${name}`}
+                href={`https://wa.me/${studioData.global.whatsappNumber}?text=Halo%20Hackbit%20Studio,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20paket%20${name}%20yang%20ada%20di%20website.`}
                 variant={highlight ? "primary" : "outline"}
-                className={`w-full justify-center ${highlight ? "!bg-brand-green !text-black !font-bold" : ""}`}
+                className={`w-full justify-center ${highlight ? "bg-brand-green! text-black! font-bold!" : ""}`}
             >
                 Pilih {name}
             </Button>

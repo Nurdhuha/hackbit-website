@@ -1,7 +1,7 @@
 export const studioData = {
     global: {
         brandName: "Hackbit Studio",
-        whatsappNumber: "62895392576400", // Placeholder, will use generic link
+        whatsappNumber: "6285126075886",
         ctas: {
             consultation: "Konsultasi Gratis",
             liveDemo: "Lihat Live Demo",
@@ -18,7 +18,7 @@ export const studioData = {
     hero: {
         headline: "Bikin Landing Page bisnis yang Loading < 1 Detik.",
         subheadline: "Stop kehilangan pembeli karena website lemot. Kami bantu bisnis Anda Go Digital dengan teknologi modern terbaru.",
-        socialProof: "Dipercaya oleh 10+ Bisnis Lokal",
+        // socialProof: "Dipercaya oleh 10+ Bisnis Lokal",
     },
     problem: {
         text: "Tahukah Anda? 53% pengunjung menutup website jika loading lebih dari 3 detik.",
@@ -67,7 +67,7 @@ export const studioData = {
             name: "Enterprise",
             price: "",
             description: "Untuk sistem kompleks dan integrasi khusus.",
-            features: ["AI Automation/AI Agents", "Custom Database", "Payment Gateway", "Dashboard Admin", "Mobile Apps (PWA)"],
+            features: ["AI Automation/AI Agents", "Custom Database", "Payment Gateway", "Micro SaaS", "Mobile Apps (PWA)"],
             highlight: false
         }
     ],
@@ -94,6 +94,18 @@ export const studioData = {
         {
             question: "Apakah website ini SEO friendly?",
             answer: "Tentu! Kami menggunakan teknologi render modern yang sangat disukai Google (Core Web Vitals Optimized). Struktur HTML kami standar SEO internasional."
+        },
+        {
+            question: "Apa yang termasuk dalam paket Enterprise?",
+            answer: "Paket Enterprise dirancang untuk sistem yang lebih kompleks seperti Micro SaaS, dashboard admin kustom, integrasi AI Automation, hingga aplikasi mobile (PWA). Pengerjaan dan biaya akan disesuaikan berdasarkan skala dan spesifikasi teknis yang Anda butuhkan."
+        },
+        {
+            question: "Apa itu Micro SaaS dan bagaimana Anda bisa membantu kami?",
+            answer: "Micro SaaS adalah software berbasis langganan yang fokus pada solusi untuk masalah spesifik perusahaan Anda atau memberikan solusi untuk niche pasar tertentu. Kami membantu Anda membangun fondasi teknisnya, mulai dari sistem login, database, hingga integrasi pembayaran (Payment Gateway), sehingga Anda bisa fokus pada pertumbuhan bisnis."
+        },
+        {
+            question: "Apa yang dimaksud dengan AI Agent/Agentic AI?",
+            answer: "Berbeda dengan chatbot biasa, AI Agent adalah sistem asisten cerdas yang bisa melakukan tugas secara mandiri (Agentic Workflow). Misalnya: melakukan riset otomatis, menjadi asisten CS yang bisa memproses pesanan, hingga mengotomatisasi input data 24/7 untuk meningkatkan efisiensi operasional Anda."
         }
     ]
 };
