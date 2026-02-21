@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { studioData } from "@/config/studio-data";
 import CursorGlow from "@/components/ui/CursorGlow";
-import PromoBanner from "@/components/ui/PromoBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,7 +57,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PromoBanner />
         <CursorGlow />
         {children}
         <script

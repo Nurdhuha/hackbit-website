@@ -6,11 +6,6 @@ export const studioData = {
             consultation: "Konsultasi Gratis",
             liveDemo: "Lihat Live Demo",
             contact: "Hubungi Kami",
-        },
-        promo: {
-            isActive: true,
-            text: "Launching Promo: Paket Growth seharga paket Starter! Terbatas untuk 10 klien pertama.",
-            cta: "Ambil Promo Sekarang"
         }
     },
     navbar: {
