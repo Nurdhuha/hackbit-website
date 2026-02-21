@@ -13,9 +13,18 @@ export default function BottomBlur() {
     return (
         <motion.div
             style={{ opacity, pointerEvents }}
-            className="fixed bottom-0 left-0 right-0 h-32 z-40 pointer-events-none"
+            className="fixed bottom-0 left-0 right-0 h-40 z-40 pointer-events-none select-none"
         >
-            <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent backdrop-blur-[2px]" />
+            {/* The Gradient Blur Layer */}
+            <div
+                className="absolute inset-0 backdrop-blur-md"
+                style={{
+                    WebkitMaskImage: "linear-gradient(to top, black, transparent)",
+                    maskImage: "linear-gradient(to top, black, transparent)",
+                }}
+            />
+            {/* The Solid Gradient Overlay for deeper blacks at the very bottom */}
+            <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
         </motion.div>
     );
 }

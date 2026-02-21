@@ -38,14 +38,35 @@ export default function Navbar() {
 
     return (
         <motion.nav
+            initial="transparent"
             variants={{
-                visible: { y: 0, opacity: 1, pointerEvents: "auto" },
-                hidden: { y: -100, opacity: 0, pointerEvents: "none" },
+                visible: {
+                    y: 0,
+                    opacity: 1,
+                    pointerEvents: "auto",
+                },
+                hidden: {
+                    y: -100,
+                    opacity: 0,
+                    pointerEvents: "none",
+                },
             }}
             animate={hidden && !mobileMenuOpen ? "hidden" : "visible"}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className={`fixed top-0 z-50 w-full ${isScrolled || mobileMenuOpen ? "glass-dark shadow-2xl" : "bg-transparent border-none"}`}
+            className="fixed top-0 z-50 w-full"
         >
+            {/* Background Layer with its own animation */}
+            <motion.div
+                initial={false}
+                animate={{
+                    backgroundColor: isScrolled || mobileMenuOpen ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0)",
+                    backdropFilter: isScrolled || mobileMenuOpen ? "blur(20px)" : "blur(0px)",
+                    borderColor: isScrolled || mobileMenuOpen ? "rgba(255, 255, 255, 0.05)" : "rgba(255, 255, 255, 0)",
+                    boxShadow: isScrolled || mobileMenuOpen ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" : "none",
+                }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="absolute inset-0 z-[-1] border-b"
+            />
             <Container>
                 <div className="flex h-16 items-center justify-between">
                     <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white tracking-tight">
