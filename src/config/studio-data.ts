@@ -87,7 +87,7 @@ export const studioData = {
     faq: [
         {
             question: "Berapa lama pengerjaannya?",
-            answer: "3-5 hari kerja untuk paket Growth. Untuk paket Custom tergantung kompleksitas fitur."
+            answer: "3-5 hari kerja untuk paket Growth. Untuk paket Enterprise tergantung kompleksitas fitur."
         },
         {
             question: "Apakah dapat domain?",
