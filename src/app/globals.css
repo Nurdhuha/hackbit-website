@@ -6,16 +6,59 @@
   --font-sans: var(--font-size-sans);
   --font-mono: var(--font-size-mono);
 
-  --color-brand-green: #39FF14;
+  --color-brand-green: #00FF94;
   --color-brand-black: #0a0a0a;
   --color-brand-dark: #171717;
   --color-brand-gray: #262626;
   --color-brand-white: #ffffff;
+
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", sans-serif;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+
+    50% {
+      transform: translateY(-20px) scale(1.05);
+    }
+  }
+
+  @keyframes float-delayed {
+
+    0%,
+    100% {
+      transform: translateY(0) scale(1.05);
+    }
+
+    50% {
+      transform: translateY(20px) scale(1);
+    }
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-xl border border-white/5;
 }
 
 :root {
   --background: #0a0a0a;
-  --foreground: #ffffff;
+  --foreground: #ededed;
   --brand-green: #39FF14;
 }
 

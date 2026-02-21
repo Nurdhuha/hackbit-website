@@ -32,24 +32,18 @@ export const studioData = {
             title: "Dapur Berkah Catering",
             description: "Platform katering online dengan manajemen pesanan real-time.",
             image: "/dapur-page.png",
-            stats: ["Lighthouse Score: 100/100", "Loading: 0.8s"],
-            category: "Concept Project",
             demoUrl: "https://dapur-berkah-catering-website.vercel.app/"
         },
         {
             title: "Propnest Property",
             description: "Website untuk properti dengan fitur pemesanan online dan manajemen properti.",
             image: "/propnest-page.png",
-            stats: ["Users: 500+", "Efficiency: +80%"],
-            category: "Project Riil",
             demoUrl: "https://propnest-website.vercel.app/"
         },
         {
             title: "Klinik Sehat Prima",
             description: "Website klinik kesehatan modern dengan fitur pendaftaran online dan informasi layanan.",
             image: "/klinik-page.png",
-            stats: ["Lighthouse Score: 100/100", "Loading: 0.7s"],
-            category: "Project Riil",
             demoUrl: "https://klinik-sehat-prima.vercel.app/"
         }
     ],
@@ -78,11 +72,11 @@ export const studioData = {
         }
     ],
     techStack: [
-        { name: "Global Edge Network", logo: "" },
-        { name: "Server Side Rendering", logo: "" },
-        { name: "Reactive UI Engine", logo: "" },
-        { name: "Enterprise Security", logo: "" },
-        { name: "High Performance Core", logo: "" },
+        { name: "Next.js" },
+        { name: "React" },
+        { name: "Tailwind CSS" },
+        { name: "Framer Motion" },
+        { name: "TypeScript" },
     ],
     faq: [
         {

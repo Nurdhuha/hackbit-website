@@ -1,18 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { studioData } from "@/config/studio-data";
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [hidden, setHidden] = useState(false);
+    const { scrollY } = useScroll();
+    const lastScrollY = useRef(0);
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const diff = latest - lastScrollY.current;
+        if (Math.abs(diff) > 50) {
+            if (latest > lastScrollY.current && latest > 100) {
+                setHidden(true);
+            } else {
+                setHidden(false);
+            }
+            lastScrollY.current = latest;
+        }
+    });
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md">
+        <motion.nav
+            variants={{
+                visible: { y: 0, opacity: 1 },
+                hidden: { y: -100, opacity: 0 },
+            }}
+            animate={hidden && !mobileMenuOpen ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="sticky top-0 z-50 w-full glass-dark transition-colors"
+        >
             <Container>
                 <div className="flex h-16 items-center justify-between">
                     <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white tracking-tight">
@@ -44,7 +68,7 @@ export default function Navbar() {
                         <Button
                             href={`https://wa.me/${studioData.global.whatsappNumber}`}
                             variant="primary"
-                            className="!bg-brand-green !text-black font-bold !py-2 !h-auto text-xs"
+                            className="bg-brand-green! text-black! font-bold py-2! h-auto! text-xs"
                         >
                             {studioData.global.ctas.consultation}
                         </Button>
@@ -62,7 +86,11 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden py-4 border-t border-neutral-800">
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="md:hidden py-4 border-t border-neutral-800"
+                    >
                         <div className="flex flex-col gap-2">
                             {studioData.navbar.links.map((link) => (
                                 <Link
@@ -77,14 +105,14 @@ export default function Navbar() {
                             <Button
                                 href={`https://wa.me/${studioData.global.whatsappNumber}`}
                                 variant="primary"
-                                className="mt-4 !bg-brand-green !text-black font-bold"
+                                className="mt-4 bg-brand-green! text-black! font-bold"
                             >
                                 {studioData.global.ctas.consultation}
                             </Button>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
             </Container>
-        </nav>
+        </motion.nav>
     );
 }
