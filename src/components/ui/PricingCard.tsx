@@ -5,20 +5,24 @@ import { studioData } from "@/config/studio-data";
 interface PricingCardProps {
     name: string;
     price: string;
+    originalPrice?: string;
     description: string;
     features: string[];
     highlight: boolean;
     badge?: string;
+    isPromo?: boolean;
 }
 
-export default function PricingCard({ name, price, description, features, highlight, badge }: PricingCardProps) {
+export default function PricingCard({ name, price, originalPrice, description, features, highlight, badge, isPromo }: PricingCardProps) {
     return (
-        <div className={`relative flex flex-col p-8 rounded-3xl border ${highlight
-            ? "bg-neutral-900 border-brand-green shadow-[0_0_30px_rgba(118,253,15,0.1)] scale-105 z-10"
+        <div className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-500 ${highlight
+            ? "bg-neutral-900 border-brand-green shadow-[0_0_40px_rgba(118,253,15,0.15)] scale-105 z-10"
             : "bg-black border-neutral-800 hover:border-neutral-700"
-            }`}>
-            {highlight && badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-green text-black font-bold text-xs rounded-full uppercase tracking-wider">
+            } ${isPromo ? "ring-2 ring-brand-green/20 ring-offset-4 ring-offset-black" : ""}`}>
+
+            {badge && (
+                <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-3 py-0.5 font-bold text-[10px] rounded-full uppercase tracking-wider z-20 ${isPromo ? "bg-brand-green text-black animate-bounce" : "bg-neutral-800 text-neutral-300"
+                    }`}>
                     {badge}
                 </div>
             )}
@@ -27,12 +31,19 @@ export default function PricingCard({ name, price, description, features, highli
                 <h3 className={`text-lg font-medium mb-2 ${highlight ? "text-brand-green" : "text-white"}`}>
                     {name}
                 </h3>
-                {price && (
-                    <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-bold text-white">{price}</span>
-                        {price !== "Hubungi" && <span className="text-neutral-500">/project</span>}
-                    </div>
-                )}
+                <div className="flex flex-col gap-1">
+                    {originalPrice && (
+                        <span className="text-sm text-neutral-600 line-through decoration-neutral-700 font-medium">
+                            {originalPrice}
+                        </span>
+                    )}
+                    {price && (
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-4xl font-black text-white tracking-tight">{price}</span>
+                            {price !== "Hubungi" && <span className="text-neutral-500 text-sm">/project</span>}
+                        </div>
+                    )}
+                </div>
                 <p className="mt-4 text-sm text-neutral-400">
                     {description}
                 </p>

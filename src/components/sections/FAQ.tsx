@@ -58,16 +58,16 @@ export default function FAQ() {
                         </div>
 
                         {hasMore && (
-                            <div className="relative z-20">
+                            <div className="relative z-20 flex justify-center mt-4">
                                 <button
                                     onClick={() => setIsExpanded(!isExpanded)}
-                                    className="flex items-center gap-2 mt-6 mx-auto lg:mx-0 px-6 py-3 rounded-full border border-neutral-800 bg-black text-white font-medium hover:bg-neutral-900 hover:border-neutral-700 transition-all group"
+                                    className="flex items-center justify-center w-12 h-12 rounded-full border border-neutral-800 bg-black text-white hover:bg-neutral-900 hover:border-neutral-700 transition-all group shadow-2xl"
+                                    aria-label={isExpanded ? "Tampilkan Lebih Sedikit" : "Tampilkan Semua FAQ"}
                                 >
-                                    <span>{isExpanded ? "Tampilkan Lebih Sedikit" : "Tampilkan Semua FAQ"}</span>
                                     {isExpanded ? (
-                                        <ChevronUp className="w-4 h-4 text-brand-green group-hover:-translate-y-0.5 transition-transform" />
+                                        <ChevronUp className="w-6 h-6 text-brand-green group-hover:-translate-y-1 transition-transform" />
                                     ) : (
-                                        <ChevronDown className="w-4 h-4 text-brand-green group-hover:translate-y-0.5 transition-transform" />
+                                        <ChevronDown className="w-6 h-6 text-brand-green group-hover:translate-y-1 transition-transform" />
                                     )}
                                 </button>
                             </div>

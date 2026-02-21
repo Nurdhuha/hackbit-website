@@ -6,6 +6,11 @@ export const studioData = {
             consultation: "Konsultasi Gratis",
             liveDemo: "Lihat Live Demo",
             contact: "Hubungi Kami",
+        },
+        promo: {
+            isActive: true,
+            text: "Launching Promo: Paket Growth seharga paket Starter! Terbatas untuk 10 klien pertama.",
+            cta: "Ambil Promo Sekarang"
         }
     },
     navbar: {
@@ -57,11 +62,13 @@ export const studioData = {
         },
         {
             name: "Growth",
-            price: "2.9jt",
+            price: "1.5jt",
+            originalPrice: "2.9jt",
             description: "Solusi lengkap untuk meningkatkan konversi penjualan.",
             features: ["Fitur WA Rotator", "Admin Panel Sederhana", "Kecepatan < 1 Detik", "Analytics Setup", "Prioritas Support", "Revisi Unlimited"],
             highlight: true,
-            badge: "Best Value"
+            badge: "Launching Promo",
+            isPromo: true
         },
         {
             name: "Enterprise",
