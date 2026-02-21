@@ -9,48 +9,51 @@ export default function TechStack() {
     const dupeStack = [...studioData.techStack, ...studioData.techStack, ...studioData.techStack];
 
     return (
-        <section className="py-12 bg-black border-y border-neutral-900 overflow-hidden">
+        <section className="py-16 bg-black border-y border-neutral-900 overflow-hidden relative">
             <Container>
-                <div className="text-center mb-8">
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
-                        Powered By
-                    </h3>
-                    <p className="text-white/60 text-sm font-medium">
-                        Modern Stack Technology
-                    </p>
+                <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12 mb-12 border-l-2 border-brand-green/30 pl-6">
+                    <div>
+                        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-green mb-2">
+                            Engineered With
+                        </h3>
+                        <p className="text-white text-2xl font-light tracking-tight italic opacity-80">
+                            Modern Stack Technology
+                        </p>
+                    </div>
                 </div>
             </Container>
 
             <div className="relative flex overflow-hidden">
                 <motion.div
-                    className="flex gap-12 sm:gap-20 items-center whitespace-nowrap px-10"
+                    className="flex gap-8 items-center whitespace-nowrap px-4"
                     animate={{
-                        x: [0, -1000], // Adjust based on content width if necessary
+                        x: [0, -1000],
                     }}
                     transition={{
                         x: {
                             repeat: Infinity,
                             repeatType: "loop",
-                            duration: 25,
+                            duration: 35,
                             ease: "linear",
                         },
                     }}
                 >
                     {dupeStack.map((tech, i) => (
-                        <div
-                            key={i}
-                            className="flex items-center gap-4 group opacity-40 hover:opacity-100 transition-all duration-300 px-6 py-2 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10"
-                        >
-                            <span className="text-xl sm:text-2xl font-bold tracking-tighter text-neutral-400 group-hover:text-white transition-colors">
-                                {tech.name}
+                        <div key={i} className="flex items-center gap-8 group">
+                            <span
+                                className="text-3xl sm:text-4xl font-black tracking-tighter text-neutral-800 transition-all duration-500 cursor-default"
+                                style={{
+                                    "--hover-color": tech.color
+                                } as React.CSSProperties}
+                            >
+                                <span className="group-hover:text-(--hover-color) transition-colors duration-500">
+                                    {tech.name}
+                                </span>
                             </span>
+                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-800 group-hover:bg-brand-green/30 transition-colors duration-500" />
                         </div>
                     ))}
                 </motion.div>
-
-                {/* Gradient Fades for Smooth Edges */}
-                <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
-                <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
             </div>
         </section>
     );

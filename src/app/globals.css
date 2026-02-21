@@ -6,7 +6,7 @@
   --font-sans: var(--font-size-sans);
   --font-mono: var(--font-size-mono);
 
-  --color-brand-green: #00FF94;
+  --color-brand-green: #76fd0f;
   --color-brand-black: #0a0a0a;
   --color-brand-dark: #171717;
   --color-brand-gray: #262626;
@@ -59,7 +59,7 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --brand-green: #39FF14;
+  --brand-green: #76fd0f;
 }
 
 html {
@@ -82,11 +82,11 @@ body {
 
 /* Utilities */
 .text-glow {
-  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+  text-shadow: 0 0 10px rgba(118, 253, 15, 0.5);
 }
 
 .border-glow {
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+  box-shadow: 0 0 10px rgba(118, 253, 15, 0.2);
 }
 
 @keyframes grid-scroll {

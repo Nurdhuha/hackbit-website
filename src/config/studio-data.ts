@@ -72,11 +72,11 @@ export const studioData = {
         }
     ],
     techStack: [
-        { name: "Next.js" },
-        { name: "React" },
-        { name: "Tailwind CSS" },
-        { name: "Framer Motion" },
-        { name: "TypeScript" },
+        { name: "Next.js", color: "#FFFFFF" },
+        { name: "React", color: "#61DAFB" },
+        { name: "Tailwind CSS", color: "#38B2AC" },
+        { name: "Framer Motion", color: "#BC4077" },
+        { name: "TypeScript", color: "#3178C6" },
     ],
     faq: [
         {
