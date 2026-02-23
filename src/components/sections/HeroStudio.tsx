@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/ui/FadeIn";
@@ -9,6 +8,7 @@ import { studioData } from "@/config/studio-data";
 import { motion } from "framer-motion";
 
 export default function HeroStudio() {
+
     // Stagger animation for text
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -116,6 +116,17 @@ export default function HeroStudio() {
                                         <span className="text-neutral-600 mt-2 font-mono group-hover:text-brand-green/80">LCP Score</span>
                                     </div>
                                     <div className="absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.03)_1px,transparent_1px)] bg-size-[20px_20px]" />
+
+                                    {/* Velocity Scan Line (Now using Framer Motion) */}
+                                    <motion.div
+                                        animate={{ top: ["0%", "100%"], opacity: [1, 0] }}
+                                        transition={{
+                                            duration: 2,
+                                            repeat: Infinity,
+                                            ease: "linear"
+                                        }}
+                                        className="absolute left-0 right-0 h-[2px] bg-brand-green shadow-[0_0_20px_rgba(57,255,20,0.8)] z-20"
+                                    />
                                 </div>
                             </div>
 
