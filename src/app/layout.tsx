@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${studioData.global.brandName} - Landing Page Super Cepat`,
+  title: `${studioData.global.brandName} - Bikin Websitemu Super Cepat`,
   description: studioData.hero.subheadline,
-  keywords: ["landing page", "website cepat", "web developer", "hackbit studio", "jasa pembuatan website"],
+  keywords: ["landing page", "website cepat", "web developer", "hackbit studio", "jasa pembuatan website", "jasa pembuatan website surabaya"],
   authors: [{ name: "Hackbit Studio" }],
   openGraph: {
     title: `${studioData.global.brandName} - Bikin Website Loading < 1 Detik`,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${studioData.global.brandName} - Landing Page Super Cepat`,
+    title: `${studioData.global.brandName} - Bikin Websitemu Super Cepat`,
     description: studioData.hero.subheadline,
   },
   robots: {
