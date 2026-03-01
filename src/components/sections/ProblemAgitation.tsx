@@ -42,12 +42,12 @@ function StorySlideItem({ chapter, index, scrollYProgress }: {
 
     // Use consistent ranges to avoid hook mismatch
     const opacity = useTransform(scrollYProgress,
-        [start, start + 0.08, end - 0.08, end],
+        [start, start + 0.05, end - 0.05, end],
         [0, 1, 1, 0]
     );
 
     const y = useTransform(scrollYProgress,
-        [start, start + 0.08, end - 0.08, end],
+        [start, start + 0.05, end - 0.05, end],
         [30, 0, 0, -30]
     );
 
@@ -84,12 +84,12 @@ function VisualPanelItem({ index, scrollYProgress }: { index: number, scrollYPro
     const end = (index + 1) / TOTAL;
 
     const opacity = useTransform(scrollYProgress,
-        [start, start + 0.08, end - 0.08, end],
+        [start, start + 0.05, end - 0.05, end],
         [0, 1, 1, 0]
     );
 
     const scale = useTransform(scrollYProgress,
-        [start, start + 0.08, end - 0.08, end],
+        [start, start + 0.05, end - 0.05, end],
         [0.9, 1, 1, 0.9]
     );
 
@@ -187,51 +187,47 @@ export default function ProblemAgitation() {
                 <>
                     <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden border-y border-neutral-900">
                         <Container className="h-full w-full flex items-center">
-                            <div className="grid grid-cols-1 lg:grid-cols-1 w-full">
+                            {/* Inner Grid with proper responsive padding */}
+                            <div className="relative w-full h-[60vh] lg:h-[70vh] flex items-center pl-8 sm:pl-12 lg:pl-16">
+                                {/* Dots - Fixed positioning and increased left padding */}
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-5 sm:gap-6 z-20">
+                                    {chapters.map((ch, i) => (
+                                        <ProgressDot key={ch.id} scrollYProgress={scrollYProgress} index={i} theme={ch.theme} />
+                                    ))}
+                                </div>
 
-                                {/* LEFT: Text Content */}
-                                <div className="relative col-span-1 lg:col-span-12 h-[60vh] lg:h-[70vh] flex items-center pl-8 sm:pl-12 lg:pl-16">
-                                    {/* Dots - Fixed positioning and increased left padding */}
-                                    <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-5 sm:gap-6 z-20">
-                                        {chapters.map((ch, i) => (
-                                            <ProgressDot key={ch.id} scrollYProgress={scrollYProgress} index={i} theme={ch.theme} />
+                                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full h-full">
+                                    <div className="relative col-span-1 lg:col-span-7 h-full flex items-center">
+                                        {chapters.map((chapter, index) => (
+                                            <StorySlideItem
+                                                key={chapter.id}
+                                                chapter={chapter}
+                                                index={index}
+                                                scrollYProgress={scrollYProgress}
+                                            />
                                         ))}
                                     </div>
 
-                                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full h-full">
-                                        <div className="relative col-span-1 lg:col-span-7 h-full flex items-center">
-                                            {chapters.map((chapter, index) => (
-                                                <StorySlideItem
-                                                    key={chapter.id}
-                                                    chapter={chapter}
-                                                    index={index}
+                                    {/* RIGHT: Visual Content (hidden on mobile, but part of the inner grid) */}
+                                    <div className="hidden lg:flex relative lg:col-span-5 h-[60vh] items-center justify-center">
+                                        <div className="relative w-full h-full">
+                                            {chapters.map((_, i) => (
+                                                <VisualPanelItem
+                                                    key={i}
+                                                    index={i}
                                                     scrollYProgress={scrollYProgress}
                                                 />
                                             ))}
                                         </div>
-
-                                        {/* RIGHT: Visual Content (hidden on mobile, but part of the inner grid) */}
-                                        <div className="hidden lg:flex relative lg:col-span-5 h-[60vh] items-center justify-center">
-                                            <div className="relative w-full h-full">
-                                                {chapters.map((_, i) => (
-                                                    <VisualPanelItem
-                                                        key={i}
-                                                        index={i}
-                                                        scrollYProgress={scrollYProgress}
-                                                    />
-                                                ))}
-                                            </div>
-                                            <div className="absolute -inset-32 bg-brand-green/5 blur-[160px] rounded-full -z-10 bg-radial pointer-events-none" />
-                                        </div>
+                                        <div className="absolute -inset-32 bg-brand-green/5 blur-[160px] rounded-full -z-10 bg-radial pointer-events-none" />
                                     </div>
                                 </div>
-
                             </div>
                         </Container>
                     </div>
 
-                    {/* Scroll Height - Increased for better sensitivity/smoothness */}
-                    <div className="h-[400vh] pointer-events-none" />
+                    {/* Scroll Height - Balanced (180vh) for snappy but readable transitions */}
+                    <div className="h-[180vh] pointer-events-none" />
                 </>
             ) : (
                 <div className="h-[300vh]" />
