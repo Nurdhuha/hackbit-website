@@ -21,7 +21,32 @@ export const studioData = {
         // socialProof: "Dipercaya oleh 10+ Bisnis Lokal",
     },
     problem: {
-        text: "Tahukah Anda? 53% pengunjung menutup website jika loading lebih dari 3 detik.",
+        chapters: [
+            {
+                id: "trap",
+                label: "THE TRAP",
+                theme: "red" as const,
+                title: "53% pengunjung menutup website jika loading lebih dari 3 detik.",
+                sub: "Website lambat bukan sekadar pengalaman buruk. Ini adalah pembunuh bisnis yang tidak terlihat.",
+                visual: "loading-error"
+            },
+            {
+                id: "cost",
+                label: "THE COST",
+                theme: "orange" as const,
+                title: "Setiap milidetik keterlambatan membakar uang Anda.",
+                sub: "Riset Google membuktikan: 1 detik penundaan = 7% konversi hilang. Berapa banyak yang sudah Anda buang?",
+                visual: "revenue-drop"
+            },
+            {
+                id: "solution",
+                label: "THE WAY OUT",
+                theme: "green" as const,
+                title: "Kompetitor Anda tidak siap untuk ini.",
+                sub: "Hackbit membangun website yang loading < 1 detik. Biarkan mereka jadi background noise.",
+                visual: "comparison-table"
+            },
+        ],
         comparison: [
             { label: "Website Biasa", value: "3-5s", color: "bg-red-500" },
             { label: "Hackbit Studio", value: "< 1s", color: "bg-brand-green" }

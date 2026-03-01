@@ -60,13 +60,13 @@ export default function FooterStudio() {
                                 WhatsApp
                             </a>
                             <a
-                                href="https://instagram.com/hackbit.studio"
+                                href="https://instagram.com/hackbit_studio"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-neutral-500 hover:text-brand-green transition-colors text-sm"
                             >
                                 <Instagram className="w-4 h-4" />
-                                @hackbit.studio
+                                @hackbit_studio
                             </a>
                         </div>
                     </div>

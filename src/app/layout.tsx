@@ -16,21 +16,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${studioData.global.brandName} - Bikin Websitemu Super Cepat`,
+  title: `${studioData.global.brandName} - Bikin Website Super Cepat`,
   description: studioData.hero.subheadline,
   keywords: ["landing page", "website cepat", "web developer", "hackbit studio", "jasa pembuatan website", "jasa pembuatan website surabaya"],
   authors: [{ name: "Hackbit Studio" }],
   openGraph: {
     title: `${studioData.global.brandName} - Bikin Website Loading < 1 Detik`,
     description: studioData.hero.subheadline,
-    url: "https://hackbit.studio",
+    url: "https://hackbitstudio.com/",
     siteName: studioData.global.brandName,
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${studioData.global.brandName} - Bikin Websitemu Super Cepat`,
+    title: `${studioData.global.brandName} - Bikin Website Super Cepat`,
     description: studioData.hero.subheadline,
   },
   robots: {

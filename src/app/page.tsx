@@ -13,7 +13,7 @@ export default function Home() {
   const waNumbers = studioData.global.whatsappNumber ? [studioData.global.whatsappNumber] : [];
 
   return (
-    <main className="relative min-h-screen bg-black text-white selection:bg-brand-green selection:text-black overflow-hidden">
+    <main className="relative min-h-screen bg-black text-white selection:bg-brand-green selection:text-black" style={{ overflowX: "clip" }}>
       {/* Animated Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-green/10 rounded-full blur-[120px] animate-float pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[35%] h-[35%] bg-brand-green/5 rounded-full blur-[100px] animate-float-delayed pointer-events-none" />
