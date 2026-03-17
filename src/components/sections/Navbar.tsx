@@ -18,15 +18,11 @@ export default function Navbar() {
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         // Toggle background based on scroll
-        if (latest > 50) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
+        setIsScrolled(latest > 50);
 
-        // Handle hide/show on scroll
+        // Handle hide/show on scroll — low threshold for instant response
         const diff = latest - lastScrollY.current;
-        if (Math.abs(diff) > 50) {
+        if (Math.abs(diff) > 15) {
             if (latest > lastScrollY.current && latest > 100) {
                 setHidden(true);
             } else {
@@ -52,20 +48,16 @@ export default function Navbar() {
                 },
             }}
             animate={hidden && !mobileMenuOpen ? "hidden" : "visible"}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed top-0 z-50 w-full"
         >
-            {/* Background Layer with its own animation */}
-            <motion.div
-                initial={false}
-                animate={{
-                    backgroundColor: isScrolled || mobileMenuOpen ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0)",
-                    backdropFilter: isScrolled || mobileMenuOpen ? "blur(20px)" : "blur(0px)",
-                    borderColor: isScrolled || mobileMenuOpen ? "rgba(255, 255, 255, 0.05)" : "rgba(255, 255, 255, 0)",
-                    boxShadow: isScrolled || mobileMenuOpen ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" : "none",
-                }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="absolute inset-0 z-[-1] border-b"
+            {/* Background Layer — blur is instant, only bg color transitions */}
+            <div
+                className={`absolute inset-0 z-[-1] border-b transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
+                    isScrolled || mobileMenuOpen
+                        ? "bg-black/50 backdrop-blur-xl border-white/5 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
+                        : "bg-transparent backdrop-blur-0 border-transparent shadow-none"
+                }`}
             />
             <Container>
                 <div className="flex h-16 items-center justify-between">

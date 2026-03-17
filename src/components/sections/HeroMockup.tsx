@@ -185,11 +185,12 @@ function FloatingBadge({
 export default function HeroMockup() {
     return (
         <div className="flex-1 w-full max-w-xl lg:max-w-none z-10 relative" style={{ perspective: "1200px" }}>
-            {/* 3D Tilted Mockup */}
+            {/* 3D Tilted Mockup — hover on desktop, tap on mobile */}
             <motion.div
-                className="relative group"
+                className="relative group cursor-pointer"
                 initial={{ rotateY: -8, rotateX: 4 }}
                 whileHover={{ rotateY: 0, rotateX: 0 }}
+                whileTap={{ rotateY: 0, rotateX: 0 }}
                 transition={{ type: "spring", stiffness: 80, damping: 20 }}
                 style={{ transformStyle: "preserve-3d" }}
             >
