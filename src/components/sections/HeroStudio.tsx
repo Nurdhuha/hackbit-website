@@ -42,11 +42,6 @@ export default function HeroStudio() {
                     {/* Text Content */}
                     <div className="flex-1 text-center lg:text-left">
                         <FadeIn>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green text-sm font-medium mb-6">
-                                <Zap className="w-4 h-4 text-brand-green" />
-                                <span>Loading under 1 second guaranteed</span>
-                            </div>
-
                             {/* 3. Staggered Text Reveal */}
                             <motion.h1
                                 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
