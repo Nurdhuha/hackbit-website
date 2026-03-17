@@ -18,10 +18,11 @@ export default function PortfolioShowcase() {
                     </div>
                 </FadeIn>
 
-                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Bento Grid: first item featured (2-col), rest normal */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {studioData.portfolio.map((project, idx) => (
                         <FadeIn key={idx} delay={idx * 0.1}>
-                            <ProjectCard {...project} />
+                            <ProjectCard {...project} featured={idx === 0} />
                         </FadeIn>
                     ))}
                 </div>

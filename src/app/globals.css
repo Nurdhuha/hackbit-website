@@ -102,3 +102,24 @@ body {
 .animate-grid-scroll {
   animation: grid-scroll 2s linear infinite;
 }
+
+/* Hero Mockup Glow */
+@keyframes mockup-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(118, 253, 15, 0.15), 0 0 30px rgba(118, 253, 15, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(118, 253, 15, 0.3), 0 0 50px rgba(118, 253, 15, 0.1);
+  }
+}
+
+.mockup-glow {
+  animation: mockup-pulse 4s ease-in-out infinite;
+}
+
+/* Glitch text effect for ProblemAgitation 408 card */
+.glitch-text {
+  text-shadow:
+    2px 0 rgba(248, 113, 113, 0.6),
+    -2px 0 rgba(59, 130, 246, 0.4);
+}
