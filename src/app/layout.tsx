@@ -48,7 +48,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: studioData.global.brandName,
-    url: typeof window !== "undefined" ? window.location.origin : "",
+    url: "https://hackbitstudio.com",
     telephone: studioData.global.whatsappNumber,
     description: studioData.hero.subheadline,
   };

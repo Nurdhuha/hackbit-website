@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { MessageCircle } from "lucide-react";
 
 interface FloatingWAProps {
@@ -34,12 +34,14 @@ const FloatingWA = ({ whatsappNumbers, message, features }: FloatingWAProps) => 
     }
 
     // WA Rotator: distribute chats across multiple CS numbers
-    const selectedNumber = useMemo(() => {
+    // Use useState + useEffect to avoid hydration mismatch (Math.random differs server vs client)
+    const [selectedNumber, setSelectedNumber] = useState(numbers[0]);
+
+    useEffect(() => {
         if (featureFlags.waRotator && numbers.length > 1) {
             const randomIndex = Math.floor(Math.random() * numbers.length);
-            return numbers[randomIndex];
+            setSelectedNumber(numbers[randomIndex]);
         }
-        return numbers[0];
     }, [featureFlags.waRotator, numbers]);
 
     const encodedMessage = encodeURIComponent(waMessage);
