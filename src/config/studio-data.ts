@@ -87,7 +87,7 @@ export const studioData = {
             description: "Solusi lengkap untuk meningkatkan konversi penjualan.",
             features: ["Fitur WA Rotator", "Admin Panel Sederhana", "Kecepatan < 1 Detik", "Analytics Setup", "Prioritas Support", "Revisi Unlimited"],
             highlight: true,
-            badge: "Launching Promo",
+            badge: "Special Promo",
             isPromo: true
         },
         {
