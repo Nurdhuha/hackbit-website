@@ -16,7 +16,7 @@ export const studioData = {
         ],
     },
     hero: {
-        headline: "Bikin Landing Page bisnis yang Loading < 1 Detik.",
+        headline: "Bikin website bisnis yang Loading < 1 Detik.",
         subheadline: "Stop kehilangan pembeli karena website lemot. Kami bantu bisnis Anda Go Digital dengan teknologi modern terbaru.",
         // socialProof: "Dipercaya oleh 10+ Bisnis Lokal",
     },
