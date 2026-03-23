@@ -38,25 +38,26 @@ export default function Navbar() {
             variants={{
                 visible: {
                     y: 0,
-                    opacity: 1,
-                    pointerEvents: "auto",
+                    visibility: "visible" as const,
+                    pointerEvents: "auto" as const,
                 },
                 hidden: {
-                    y: -100,
-                    opacity: 0,
-                    pointerEvents: "none",
+                    y: "-100%",
+                    visibility: "hidden" as const,
+                    pointerEvents: "none" as const,
+                    transition: { visibility: { delay: 0.3 } },
                 },
             }}
             animate={hidden && !mobileMenuOpen ? "hidden" : "visible"}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed top-0 z-50 w-full"
         >
-            {/* Background Layer — blur is instant, only bg color transitions */}
+            {/* Background Layer — blur applies instantly, only colors transition */}
             <div
                 className={`absolute inset-0 z-[-1] border-b transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
                     isScrolled || mobileMenuOpen
                         ? "bg-black/50 backdrop-blur-xl border-white/5 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
-                        : "bg-transparent backdrop-blur-0 border-transparent shadow-none"
+                        : "bg-transparent border-transparent shadow-none"
                 }`}
             />
             <Container>
