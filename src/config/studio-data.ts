@@ -94,7 +94,7 @@ export const studioData = {
             name: "Enterprise",
             price: "",
             description: "Untuk sistem kompleks dan integrasi khusus.",
-            features: ["AI Automation/AI Agents", "Custom Database", "Payment Gateway", "Micro SaaS", "Mobile Apps (PWA)"],
+            features: ["AI Automation/AI Agents", "Custom Database", "Payment Gateway", "Micro SaaS", "Mobile Apps"],
             highlight: false
         }
     ],
@@ -124,7 +124,7 @@ export const studioData = {
         },
         {
             question: "Apa yang termasuk dalam paket Enterprise?",
-            answer: "Paket Enterprise dirancang untuk sistem yang lebih kompleks seperti Micro SaaS, dashboard admin kustom, integrasi AI Automation, hingga aplikasi mobile (PWA). Pengerjaan dan biaya akan disesuaikan berdasarkan skala dan spesifikasi teknis yang Anda butuhkan."
+            answer: "Paket Enterprise dirancang untuk sistem yang lebih kompleks seperti Micro SaaS, dashboard admin kustom, integrasi AI Automation, hingga aplikasi mobile. Pengerjaan dan biaya akan disesuaikan berdasarkan skala dan spesifikasi teknis yang Anda butuhkan."
         },
         {
             question: "Apa itu Micro SaaS dan bagaimana Anda bisa membantu kami?",
