@@ -10,10 +10,10 @@ export default function PortfolioShowcase() {
                 <FadeIn>
                     <div className="max-w-2xl mb-12">
                         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                            Selected Works
+                            Eksplorasi & Template
                         </h2>
                         <p className="text-neutral-400 text-lg">
-                            Pembuktian kualitas. Berikut adalah beberapa proyek yang telah kami kerjakan dengan standar performa tinggi.
+                            Kumpulan contoh desain dan eksplorasi dari kami. Website di bawah ini bukan portofolio klien asli, melainkan simulasi kualitas dan performa tinggi yang bisa kami bangun untuk Anda.
                         </p>
                     </div>
                 </FadeIn>

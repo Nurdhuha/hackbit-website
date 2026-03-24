@@ -10,7 +10,7 @@ export const studioData = {
     },
     navbar: {
         links: [
-            { label: "Portfolio", href: "#portfolio" },
+            { label: "Katalog", href: "#portfolio" },
             { label: "Harga", href: "#pricing" },
             { label: "FAQ", href: "#faq" },
         ],
