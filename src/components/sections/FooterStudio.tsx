@@ -26,7 +26,7 @@ export default function FooterStudio() {
                             <span>Hackbit<span className="text-brand-green"> Studio</span></span>
                         </Link>
                         <p className="text-neutral-500 text-sm max-w-xs">
-                            Bikin website bisnis super cepat dengan loading di bawah 1 detik. Dipercaya 10+ bisnis lokal.
+                            Bikin website bisnis super cepat dengan loading di bawah 1 detik.
                         </p>
                     </div>
 
