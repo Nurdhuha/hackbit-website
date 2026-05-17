@@ -82,15 +82,15 @@ export default function AutomationExplanation() {
                                         </h3>
                                         <div className="flex flex-col gap-2 sm:gap-3">
                                             <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
-                                                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                                                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">WhatsApp & Chat</span>
                                             </div>
                                             <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
-                                                <FileSpreadsheet className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                                                <FileSpreadsheet className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Google Sheets</span>
                                             </div>
                                             <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
-                                                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
+                                                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Email & Web Forms</span>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@ export default function AutomationExplanation() {
                                 {/* Stage 2: Processing Engine */}
                                 <motion.div 
                                     style={{ opacity: engineOpacity, scale: engineScale }}
-                                    className="flex-shrink-0 relative z-10 py-2 sm:py-0"
+                                    className="shrink-0 relative z-10 py-2 sm:py-0"
                                 >
                                     <div className="relative w-28 h-28 sm:w-40 sm:h-40 flex items-center justify-center mx-auto">
                                         {/* Animated rings */}
@@ -175,15 +175,15 @@ export default function AutomationExplanation() {
                                         </h3>
                                         <div className="flex flex-col gap-2 sm:gap-3">
                                             <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
-                                                <LineChart className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0" />
+                                                <LineChart className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Dashboard Real-time</span>
                                             </div>
                                             <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
-                                                <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 flex-shrink-0" />
+                                                <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Notifikasi Otomatis</span>
                                             </div>
                                             <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
-                                                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 flex-shrink-0" />
+                                                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Generate Invoice</span>
                                             </div>
                                         </div>
