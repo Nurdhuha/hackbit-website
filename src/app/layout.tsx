@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${studioData.global.brandName} - Bikin Website Super Cepat`,
-  description: studioData.hero.subheadline,
-  keywords: ["landing page", "website cepat", "web developer", "hackbit studio", "jasa pembuatan website", "jasa pembuatan website surabaya"],
+  title: `${studioData.global.brandName} - Custom Business Automation`,
+  description: "Otomatiskan operasional bisnis Anda dengan AI dan integrasi cerdas. Kami membantu mengubah proses manual berulang menjadi sistem 24/7 yang efisien.",
+  keywords: ["business automation", "jasa automasi bisnis", "ai automation", "hackbit studio", "integrasi sistem", "otomatisasi operasional"],
   authors: [{ name: "Hackbit Studio" }],
   openGraph: {
-    title: `${studioData.global.brandName} - Bikin Website Loading < 1 Detik`,
-    description: studioData.hero.subheadline,
+    title: `${studioData.global.brandName} - Solusi Business Automation`,
+    description: "Otomatiskan operasional bisnis Anda dengan AI dan integrasi cerdas. Kami membantu mengubah proses manual berulang menjadi sistem 24/7 yang efisien.",
     url: "https://hackbitstudio.com/",
     siteName: studioData.global.brandName,
     locale: "id_ID",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${studioData.global.brandName} - Bikin Website Super Cepat`,
-    description: studioData.hero.subheadline,
+    title: `${studioData.global.brandName} - Custom Business Automation`,
+    description: "Otomatiskan operasional bisnis Anda dengan AI dan integrasi cerdas. Kami membantu mengubah proses manual berulang menjadi sistem 24/7 yang efisien.",
   },
   robots: {
     index: true,
@@ -50,7 +50,7 @@ export default function RootLayout({
     name: studioData.global.brandName,
     url: "https://hackbitstudio.com",
     telephone: studioData.global.whatsappNumber,
-    description: studioData.hero.subheadline,
+    description: "Otomatiskan operasional bisnis Anda dengan AI dan integrasi cerdas.",
   };
 
   return (
