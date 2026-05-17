@@ -49,7 +49,7 @@ export default function AutomationExplanation() {
         <section id="automation" ref={containerRef} className="relative bg-neutral-950">
             {mounted ? (
                 <>
-                    <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden border-y border-neutral-900">
+                    <div className="sticky top-0 h-[100dvh] w-full flex flex-col justify-start md:justify-center items-center pt-24 md:pt-0 pb-10 md:pb-0 overflow-y-auto overflow-x-hidden border-y border-neutral-900">
                         {/* Background Glows */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-brand-green/5 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none" />
                         
@@ -59,8 +59,8 @@ export default function AutomationExplanation() {
                         />
 
                         <Container className="relative z-10 w-full">
-                            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-20">
-                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                            <div className="text-center max-w-3xl mx-auto mb-6 md:mb-20">
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-6">
                                     Bagaimana <span className="text-brand-green">Automasi</span> Bekerja?
                                 </h2>
                                 <p className="text-neutral-400 text-sm sm:text-lg lg:text-xl">
@@ -69,27 +69,27 @@ export default function AutomationExplanation() {
                                 </p>
                             </div>
 
-                            <div className="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-4">
+                            <div className="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4">
                                 
                                 {/* Stage 1: Inputs */}
                                 <motion.div 
                                     style={{ opacity: inputOpacity, y: inputY }}
                                     className="flex-1 w-full md:w-auto"
                                 >
-                                    <div className="bg-neutral-900/80 border border-neutral-800 p-4 sm:p-6 rounded-2xl backdrop-blur-md shadow-xl relative z-20">
-                                        <h3 className="text-white font-bold mb-3 sm:mb-4 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <div className="bg-neutral-900/80 border border-neutral-800 p-3 sm:p-6 rounded-2xl backdrop-blur-md shadow-xl relative z-20">
+                                        <h3 className="text-white font-bold mb-2 sm:mb-4 flex items-center justify-center gap-2 text-sm sm:text-base">
                                             <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" /> Sumber Data (Input)
                                         </h3>
-                                        <div className="flex flex-col gap-2 sm:gap-3">
-                                            <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
+                                        <div className="flex flex-col gap-1.5 sm:gap-3">
+                                            <div className="flex items-center gap-2 sm:gap-3 bg-black/60 p-2 sm:p-3 rounded-lg border border-neutral-800/50">
                                                 <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">WhatsApp & Chat</span>
                                             </div>
-                                            <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
+                                            <div className="flex items-center gap-2 sm:gap-3 bg-black/60 p-2 sm:p-3 rounded-lg border border-neutral-800/50">
                                                 <FileSpreadsheet className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Google Sheets</span>
                                             </div>
-                                            <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
+                                            <div className="flex items-center gap-2 sm:gap-3 bg-black/60 p-2 sm:p-3 rounded-lg border border-neutral-800/50">
                                                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Email & Web Forms</span>
                                             </div>
@@ -111,7 +111,7 @@ export default function AutomationExplanation() {
                                         transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
                                     />
                                 </div>
-                                <div className="md:hidden relative w-px h-8 sm:h-12 bg-neutral-800 flex items-center justify-center">
+                                <div className="md:hidden relative w-px h-4 sm:h-12 bg-neutral-800 flex items-center justify-center">
                                     <motion.div 
                                         className="absolute top-0 left-0 w-full bg-brand-green shadow-[0_0_10px_rgba(57,255,20,0.8)]" 
                                         style={{ height: line1Progress }} 
@@ -123,7 +123,7 @@ export default function AutomationExplanation() {
                                     style={{ opacity: engineOpacity, scale: engineScale }}
                                     className="shrink-0 relative z-10 py-2 sm:py-0"
                                 >
-                                    <div className="relative w-28 h-28 sm:w-40 sm:h-40 flex items-center justify-center mx-auto">
+                                    <div className="relative w-20 h-20 sm:w-40 sm:h-40 flex items-center justify-center mx-auto">
                                         {/* Animated rings */}
                                         <div className="absolute inset-0 border-2 border-brand-green/30 rounded-full animate-spin-slow" />
                                         <div className="absolute inset-2 sm:inset-3 border border-brand-green/20 border-dashed rounded-full animate-reverse-spin" />
@@ -133,8 +133,8 @@ export default function AutomationExplanation() {
                                             className="absolute inset-0 bg-brand-green/20 rounded-full blur-xl animate-pulse" 
                                         />
                                         
-                                        <div className="relative bg-neutral-900 border-2 border-brand-green p-4 sm:p-6 rounded-full shadow-[0_0_30px_rgba(57,255,20,0.3)]">
-                                            <Bot className="w-8 h-8 sm:w-12 sm:h-12 text-brand-green" />
+                                        <div className="relative bg-neutral-900 border-2 border-brand-green p-3 sm:p-6 rounded-full shadow-[0_0_30px_rgba(57,255,20,0.3)]">
+                                            <Bot className="w-6 h-6 sm:w-12 sm:h-12 text-brand-green" />
                                         </div>
                                     </div>
                                     <div className="text-center mt-3 sm:mt-4">
@@ -157,7 +157,7 @@ export default function AutomationExplanation() {
                                         transition={{ duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                                     />
                                 </div>
-                                <div className="md:hidden relative w-px h-8 sm:h-12 bg-neutral-800 flex items-center justify-center">
+                                <div className="md:hidden relative w-px h-4 sm:h-12 bg-neutral-800 flex items-center justify-center">
                                     <motion.div 
                                         className="absolute top-0 left-0 w-full bg-brand-green shadow-[0_0_10px_rgba(57,255,20,0.8)]" 
                                         style={{ height: line2Progress }} 
@@ -169,20 +169,20 @@ export default function AutomationExplanation() {
                                     style={{ opacity: outputOpacity, y: outputY }}
                                     className="flex-1 w-full md:w-auto"
                                 >
-                                    <div className="bg-neutral-900/80 border border-neutral-800 p-4 sm:p-6 rounded-2xl backdrop-blur-md shadow-xl relative z-20">
-                                        <h3 className="text-white font-bold mb-3 sm:mb-4 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <div className="bg-neutral-900/80 border border-neutral-800 p-3 sm:p-6 rounded-2xl backdrop-blur-md shadow-xl relative z-20">
+                                        <h3 className="text-white font-bold mb-2 sm:mb-4 flex items-center justify-center gap-2 text-sm sm:text-base">
                                             <Database className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" /> Hasil Akhir (Output)
                                         </h3>
-                                        <div className="flex flex-col gap-2 sm:gap-3">
-                                            <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
+                                        <div className="flex flex-col gap-1.5 sm:gap-3">
+                                            <div className="flex items-center gap-2 sm:gap-3 bg-black/60 p-2 sm:p-3 rounded-lg border border-neutral-800/50">
                                                 <LineChart className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Dashboard Real-time</span>
                                             </div>
-                                            <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
+                                            <div className="flex items-center gap-2 sm:gap-3 bg-black/60 p-2 sm:p-3 rounded-lg border border-neutral-800/50">
                                                 <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Notifikasi Otomatis</span>
                                             </div>
-                                            <div className="flex items-center gap-3 bg-black/60 p-2.5 sm:p-3 rounded-lg border border-neutral-800/50">
+                                            <div className="flex items-center gap-2 sm:gap-3 bg-black/60 p-2 sm:p-3 rounded-lg border border-neutral-800/50">
                                                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 shrink-0" />
                                                 <span className="text-xs sm:text-sm text-neutral-300">Generate Invoice</span>
                                             </div>
