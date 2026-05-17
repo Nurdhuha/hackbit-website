@@ -1,7 +1,7 @@
 import Navbar from "@/components/sections/Navbar";
 import HeroStudio from "@/components/sections/HeroStudio";
 import ProblemAgitation from "@/components/sections/ProblemAgitation";
-import PortfolioShowcase from "@/components/sections/PortfolioGrid";
+import AutomationExplanation from "@/components/sections/AutomationExplanation";
 import PricingTables from "@/components/sections/PricingTables";
 import TechStack from "@/components/sections/TechStack";
 import FAQ from "@/components/sections/FAQ";
@@ -23,7 +23,7 @@ export default function Home() {
       <HeroStudio />
       <TechStack />
       <ProblemAgitation />
-      <PortfolioShowcase />
+      <AutomationExplanation />
       <PricingTables />
       <FAQ />
       <FooterStudio />

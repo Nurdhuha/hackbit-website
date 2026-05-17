@@ -24,7 +24,7 @@ export default function HeroStudio() {
     };
 
     return (
-        <section className="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32 bg-black">
+        <section className="relative overflow-hidden min-h-screen flex items-center justify-center pt-20 bg-black">
             {/* 1. Cyber Grid Background */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <div
@@ -56,7 +56,7 @@ export default function HeroStudio() {
                                 {studioData.hero.headline.split(" ").map((word, i) => (
                                     <span key={i} className="inline-block mr-3">
                                         {word.split("").map((char, j) => (
-                                            <motion.span key={j} variants={letterVariants} className={word === "Loading" || word === "<" || word === "1" || word === "Detik." ? "text-brand-green" : ""}>
+                                            <motion.span key={j} variants={letterVariants} className={word === "Otomatiskan" || word === "Lipatgandakan" || word === "Efisiensi." ? "text-brand-green" : ""}>
                                                 {char}
                                             </motion.span>
                                         ))}
@@ -72,7 +72,7 @@ export default function HeroStudio() {
                                 <Button href={`https://wa.me/${studioData.global.whatsappNumber}`} variant="primary" className="w-full max-w-xs sm:max-w-none sm:w-auto bg-brand-green! text-black! hover:bg-brand-green/90! font-bold border-none text-glow">
                                     {studioData.global.ctas.consultation}
                                 </Button>
-                                <Button href="#portfolio" variant="outline" className="w-full max-w-xs sm:max-w-none sm:w-auto border-neutral-800 hover:border-brand-green hover:text-brand-green">
+                                <Button href="#automation" variant="outline" className="w-full max-w-xs sm:max-w-none sm:w-auto border-neutral-800 hover:border-brand-green hover:text-brand-green">
                                     {studioData.global.ctas.liveDemo}
                                 </Button>
                             </div>

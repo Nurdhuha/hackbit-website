@@ -8,11 +8,11 @@ export default function PricingTables() {
         <section id="pricing" className="py-14 sm:py-24 bg-neutral-950 scroll-mt-20">
             <Container>
                 <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
-                    <p className="text-neutral-400">Investasi terbaik untuk pertumbuhan bisnis digital Anda.</p>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Harga Fleksibel Sesuai Kebutuhan</h2>
+                    <p className="text-neutral-400">Solusi automasi yang disesuaikan dengan skala dan model operasional bisnis Anda.</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 items-start max-w-5xl mx-auto">
+                <div className="max-w-xl mx-auto">
                     {studioData.pricing.map((plan, idx) => (
                         <FadeIn key={idx} delay={idx * 0.1}>
                             <PricingCard {...plan} />

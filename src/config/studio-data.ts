@@ -4,20 +4,20 @@ export const studioData = {
         whatsappNumber: "6285126075886",
         ctas: {
             consultation: "Konsultasi Gratis",
-            liveDemo: "Lihat Live Demo",
+            liveDemo: "Lihat Cara Kerja",
             contact: "Hubungi Kami",
         }
     },
     navbar: {
         links: [
-            { label: "Katalog", href: "#portfolio" },
+            { label: "Solusi", href: "#automation" },
             { label: "Harga", href: "#pricing" },
             { label: "FAQ", href: "#faq" },
         ],
     },
     hero: {
-        headline: "Bikin website bisnis yang Loading < 1 Detik.",
-        subheadline: "Stop kehilangan pembeli karena website lemot. Kami bantu bisnis Anda Go Digital dengan teknologi modern terbaru.",
+        headline: "Otomatiskan Bisnis Anda, Lipatgandakan Efisiensi.",
+        subheadline: "Tinggalkan proses manual yang memakan waktu dan rawan error. Kami membangun sistem automasi pintar agar Anda bisa fokus pada pertumbuhan bisnis.",
 
     },
     problem: {
@@ -26,113 +26,81 @@ export const studioData = {
                 id: "trap",
                 label: "THE TRAP",
                 theme: "red" as const,
-                title: "53% pengunjung menutup website jika loading lebih dari 3 detik.",
-                sub: "Website lambat bukan sekadar pengalaman buruk. Ini adalah pembunuh bisnis yang tidak terlihat.",
+                title: "Terjebak dalam rutinitas kerja manual dan entri data berulang.",
+                sub: "Karyawan Anda menghabiskan berjam-jam setiap hari untuk memindahkan data, membalas pesan rutin, atau membuat laporan manual.",
                 visual: "loading-error"
             },
             {
                 id: "cost",
                 label: "THE COST",
                 theme: "orange" as const,
-                title: "Setiap milidetik keterlambatan membakar uang Anda.",
-                sub: "Riset Google membuktikan: 1 detik penundaan = 7% konversi hilang. Berapa banyak yang sudah Anda buang?",
+                title: "Biaya overhead membengkak dan lambatnya respon karena human error.",
+                sub: "Kesalahan input data dan proses yang lambat tidak hanya membuat pelanggan lari, tapi juga membuang anggaran operasional Anda secara sia-sia.",
                 visual: "revenue-drop"
             },
             {
                 id: "solution",
                 label: "THE WAY OUT",
                 theme: "green" as const,
-                title: "Kompetitor Anda tidak siap untuk ini.",
-                sub: "Hackbit membangun website yang loading < 1 detik. Biarkan mereka jadi background noise.",
+                title: "Sistem automasi pintar yang bekerja 24/7 tanpa henti.",
+                sub: "Hackbit membangun sistem yang mengotomatisasi alur kerja Anda. Dari sinkronisasi data hingga layanan pelanggan otomatis dengan AI.",
                 visual: "comparison-table"
             },
         ],
         comparison: [
-            { label: "Website Biasa", value: "3-5s", color: "bg-red-500" },
-            { label: "Hackbit Studio", value: "< 1s", color: "bg-brand-green" }
+            { label: "Proses Manual", value: "Berjam-jam", color: "bg-red-500" },
+            { label: "Sistem Automasi", value: "Instan", color: "bg-brand-green" }
         ]
     },
-    portfolio: [
-        {
-            title: "Dapur Berkah Catering",
-            description: "Platform katering online dengan manajemen pesanan real-time.",
-            image: "/dapur-page.png",
-            demoUrl: "https://dapur-berkah-catering-website.vercel.app/"
-        },
-        {
-            title: "Propnest Property",
-            description: "Website untuk properti dengan fitur pemesanan online dan manajemen properti.",
-            image: "/propnest-page.png",
-            demoUrl: "https://propnest-website.vercel.app/"
-        },
-        {
-            title: "Klinik Sehat Prima",
-            description: "Website klinik kesehatan modern dengan fitur pendaftaran online dan informasi layanan.",
-            image: "/klinik-page.png",
-            demoUrl: "https://klinik-sehat-prima.vercel.app/"
-        }
-    ],
     pricing: [
         {
-            name: "Starter",
-            price: "1.5jt",
-            description: "Landing page standar untuk branding awal.",
-            features: ["Single Page", "Optimasi SEO Basic", "Domain .com (1 Tahun)", "Revisi 2x"],
-            highlight: false
-        },
-        {
-            name: "Growth",
-            price: "1.5jt",
-            originalPrice: "2.9jt",
-            description: "Solusi lengkap untuk meningkatkan konversi penjualan.",
-            features: ["Fitur WA Rotator", "Admin Panel Sederhana", "Kecepatan < 1 Detik", "Analytics Setup", "Prioritas Support", "Revisi Unlimited"],
+            name: "Custom Business Automation",
+            price: "Custom",
+            description: "Solusi automasi yang dirancang khusus menyesuaikan dengan skala dan kebutuhan operasional bisnis Anda.",
+            features: [
+                "Custom Dashboard & Admin Panel",
+                "Integrasi AI (Agentic Workflow)",
+                "Otomatisasi Input Data & Pelaporan",
+                "Integrasi API (WhatsApp, Payment, dll)",
+                "Keamanan Data Tingkat Tinggi",
+                "Support & Maintenance Prioritas"
+            ],
             highlight: true,
-            badge: "Special Promo",
-            isPromo: true
-        },
-        {
-            name: "Enterprise",
-            price: "",
-            description: "Untuk sistem kompleks dan integrasi khusus.",
-            features: ["AI Automation/AI Agents", "Custom Database", "Payment Gateway", "Micro SaaS", "Mobile Apps"],
-            highlight: false
+            badge: "Best Value",
+            isPromo: false
         }
     ],
     techStack: [
         { name: "Next.js", color: "#FFFFFF" },
         { name: "React", color: "#61DAFB" },
         { name: "Tailwind CSS", color: "#38B2AC" },
-        { name: "Framer Motion", color: "#BC4077" },
+        { name: "Python", color: "#3776AB" },
         { name: "TypeScript", color: "#3178C6" },
     ],
     faq: [
         {
-            question: "Berapa lama pengerjaannya?",
-            answer: "3-5 hari kerja untuk paket Growth. Untuk paket Enterprise tergantung kompleksitas fitur."
+            question: "Apa itu Automasi Bisnis?",
+            answer: "Automasi bisnis adalah penggunaan teknologi untuk menjalankan tugas-tugas berulang secara otomatis tanpa campur tangan manusia. Contohnya: otomatis mengirim invoice saat ada pembelian, membalas chat pelanggan dengan AI, atau memindahkan data antar aplikasi."
         },
         {
-            question: "Apakah dapat domain?",
-            answer: "Ya, Paket Starter dan Growth sudah termasuk domain .com gratis selama 1 tahun."
+            question: "Berapa lama proses pembuatan sistem automasi?",
+            answer: "Waktu pengerjaan sangat bervariasi tergantung pada kompleksitas alur kerja yang ingin diotomatisasi. Biasanya berkisar antara 2 minggu hingga 2 bulan."
         },
         {
-            question: "Kalau mau ganti foto gimana?",
-            answer: "Untuk paket Growth, Anda mendapatkan akses Admin Panel untuk mengubah foto dan teks tanpa harus coding."
+            question: "Sistem seperti apa saja yang bisa diotomatisasi?",
+            answer: "Hampir semua alur kerja digital dapat diotomatisasi. Mulai dari manajemen prospek (CRM), sinkronisasi inventaris, pembuatan laporan keuangan, hingga layanan pelanggan menggunakan AI."
         },
         {
-            question: "Apakah website ini SEO friendly?",
-            answer: "Tentu! Kami menggunakan teknologi render modern yang sangat disukai Google (Core Web Vitals Optimized). Struktur HTML kami standar SEO internasional."
+            question: "Apakah sistem automasi ini aman?",
+            answer: "Sangat aman. Kami menggunakan standar keamanan industri terbaik untuk melindungi data Anda. Data Anda dienkripsi dan sistem kami dirancang dengan praktik keamanan (best practices) modern."
         },
         {
-            question: "Apa yang termasuk dalam paket Enterprise?",
-            answer: "Paket Enterprise dirancang untuk sistem yang lebih kompleks seperti Micro SaaS, dashboard admin kustom, integrasi AI Automation, hingga aplikasi mobile. Pengerjaan dan biaya akan disesuaikan berdasarkan skala dan spesifikasi teknis yang Anda butuhkan."
+            question: "Bagaimana cara menentukan harga (Custom Price)?",
+            answer: "Harga ditentukan setelah sesi konsultasi. Kami akan menganalisis kebutuhan bisnis Anda, menentukan fitur yang tepat, lalu memberikan penawaran harga yang transparan berdasarkan ruang lingkup proyek."
         },
         {
-            question: "Apa itu Micro SaaS dan bagaimana Anda bisa membantu kami?",
-            answer: "Micro SaaS adalah software berbasis langganan yang fokus pada solusi untuk masalah spesifik perusahaan Anda atau memberikan solusi untuk niche pasar tertentu. Kami membantu Anda membangun fondasi teknisnya, mulai dari sistem login, database, hingga integrasi pembayaran (Payment Gateway), sehingga Anda bisa fokus pada pertumbuhan bisnis."
-        },
-        {
-            question: "Apa yang dimaksud dengan AI Agent/Agentic AI?",
-            answer: "Berbeda dengan chatbot biasa, AI Agent adalah sistem asisten cerdas yang bisa melakukan tugas secara mandiri (Agentic Workflow). Misalnya: melakukan riset otomatis, menjadi asisten CS yang bisa memproses pesanan, hingga mengotomatisasi input data 24/7 untuk meningkatkan efisiensi operasional Anda."
+            question: "Apakah saya perlu kemampuan teknis untuk menggunakan sistem ini?",
+            answer: "Tidak. Kami akan membuatkan dashboard antarmuka (UI) yang mudah digunakan. Tim Anda hanya perlu menggunakan sistem layaknya menggunakan aplikasi biasa, semua kerumitan teknis berjalan di latar belakang (background)."
         }
     ]
 };

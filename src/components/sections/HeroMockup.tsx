@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, BarChart3 } from "lucide-react";
+import { Zap, Bot, Clock, CheckCircle2 } from "lucide-react";
 
 // Animated circular progress meter
-function PerformanceMeter() {
+function EfficiencyMeter() {
     const radius = 36;
     const circumference = 2 * Math.PI * radius;
 
@@ -35,19 +35,20 @@ function PerformanceMeter() {
                 </svg>
                 {/* Counter in center */}
                 <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0 flex items-center justify-center flex-col"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 0.5 }}
                 >
                     <motion.span
-                        className="text-2xl font-bold text-white font-mono"
+                        className="text-2xl font-bold text-white font-mono leading-none"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.2 }}
                     >
-                        100
+                        99<span className="text-sm">.9</span>
                     </motion.span>
+                    <span className="text-[8px] text-brand-green font-bold">%</span>
                 </motion.div>
             </div>
             <motion.span
@@ -56,25 +57,25 @@ function PerformanceMeter() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
             >
-                Performance
+                Efficiency
             </motion.span>
         </div>
     );
 }
 
-// Animated speed metric bars
-const speedMetrics = [
-    { label: "FCP", value: 0.6, time: "0.6s", color: "#76fd0f" },
-    { label: "LCP", value: 0.8, time: "0.8s", color: "#3ddb1a" },
-    { label: "CLS", value: 0.02, time: "0.02", color: "#22c55e" },
+// Animated automation metric bars
+const automationMetrics = [
+    { label: "TASKS", value: 0.9, time: "12k+", color: "#76fd0f" },
+    { label: "HOURS", value: 0.75, time: "140h+", color: "#3ddb1a" },
+    { label: "ERROR", value: 0.05, time: "0.01%", color: "#22c55e" },
 ];
 
-function SpeedBars() {
+function AutomationBars() {
     return (
         <div className="flex flex-col gap-2.5 flex-1">
-            {speedMetrics.map((metric, i) => (
+            {automationMetrics.map((metric, i) => (
                 <div key={metric.label} className="flex items-center gap-2">
-                    <span className="text-[10px] text-neutral-500 font-mono w-7 shrink-0">{metric.label}</span>
+                    <span className="text-[10px] text-neutral-500 font-mono w-8 shrink-0">{metric.label}</span>
                     <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
                         <motion.div
                             className="h-full rounded-full"
@@ -85,7 +86,7 @@ function SpeedBars() {
                         />
                     </div>
                     <motion.span
-                        className="text-[10px] text-white font-mono w-7 text-right shrink-0"
+                        className="text-[10px] text-white font-mono w-8 text-right shrink-0"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.3 + i * 0.2 }}
@@ -100,19 +101,19 @@ function SpeedBars() {
 
 // Code typing animation
 const codeLines = [
-    { code: "const app = ", highlight: "nextApp", rest: "();" },
-    { code: "app.", highlight: "optimize", rest: "({ speed: true });" },
-    { code: "await app.", highlight: "deploy", rest: "();" },
+    { code: "const task = ", highlight: "onNewLead", rest: "(wa);" },
+    { code: "task.", highlight: "process", rest: "(withAI);" },
+    { code: "await task.", highlight: "sync", rest: "(sheets);" },
 ];
 
-function CodeSnippet() {
+function WorkflowSnippet() {
     return (
         <div className="bg-black/60 rounded-lg p-3 border border-white/5 font-mono text-[10px] leading-relaxed">
             <div className="flex items-center gap-1.5 mb-2">
                 <div className="w-2 h-2 rounded-full bg-red-500/80" />
                 <div className="w-2 h-2 rounded-full bg-yellow-500/80" />
                 <div className="w-2 h-2 rounded-full bg-green-500/80" />
-                <span className="text-neutral-600 ml-1">app.ts</span>
+                <span className="text-neutral-600 ml-1">workflow.ts</span>
             </div>
             {codeLines.map((line, i) => (
                 <motion.div
@@ -227,9 +228,9 @@ export default function HeroMockup() {
                                 >
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-4 h-4 rounded-sm bg-brand-green/20 flex items-center justify-center">
-                                            <Zap className="w-2.5 h-2.5 text-brand-green" />
+                                            <Bot className="w-2.5 h-2.5 text-brand-green" />
                                         </div>
-                                        <span className="text-[10px] text-white font-semibold">Speed Report</span>
+                                        <span className="text-[10px] text-white font-semibold">Automation Dashboard</span>
                                     </div>
                                     <div className="flex items-center gap-1">
                                         <motion.div
@@ -237,18 +238,18 @@ export default function HeroMockup() {
                                             animate={{ opacity: [1, 0.3, 1] }}
                                             transition={{ duration: 2, repeat: Infinity }}
                                         />
-                                        <span className="text-[9px] text-neutral-500">Live</span>
+                                        <span className="text-[9px] text-neutral-500">System Live</span>
                                     </div>
                                 </motion.div>
 
                                 {/* Metrics Row */}
                                 <div className="flex gap-3 items-start flex-1">
-                                    <PerformanceMeter />
-                                    <SpeedBars />
+                                    <EfficiencyMeter />
+                                    <AutomationBars />
                                 </div>
 
                                 {/* Code Snippet */}
-                                <CodeSnippet />
+                                <WorkflowSnippet />
                             </div>
 
                             {/* Scan line — subtle */}
@@ -264,27 +265,27 @@ export default function HeroMockup() {
 
             {/* Floating Badges */}
             <FloatingBadge
-                icon={<div className="w-7 h-7 rounded-full bg-brand-green/20 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-brand-green" /></div>}
-                label="Loading"
-                value="< 1s"
+                icon={<div className="w-7 h-7 rounded-full bg-brand-green/20 flex items-center justify-center"><Clock className="w-3.5 h-3.5 text-brand-green" /></div>}
+                label="Active"
+                value="24/7/365"
                 className="-bottom-4 -left-4 sm:-bottom-6 sm:-left-6"
                 delay={1.5}
                 floatDuration={5}
                 floatDistance={10}
             />
             <FloatingBadge
-                icon={<div className="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center"><BarChart3 className="w-3.5 h-3.5 text-blue-400" /></div>}
-                label="PageSpeed"
-                value="100/100"
+                icon={<div className="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center"><Bot className="w-3.5 h-3.5 text-blue-400" /></div>}
+                label="Automated"
+                value="10k+ Tasks"
                 className="-top-4 -right-2 sm:-top-6 sm:-right-4"
                 delay={2}
                 floatDuration={6}
                 floatDistance={8}
             />
             <FloatingBadge
-                icon={<div className="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center"><ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /></div>}
-                label="Security"
-                value="A+ SSL"
+                icon={<div className="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /></div>}
+                label="Accuracy"
+                value="99.99%"
                 className="top-1/2 -right-4 sm:-right-8 -translate-y-1/2 hidden sm:flex"
                 delay={2.5}
                 floatDuration={7}

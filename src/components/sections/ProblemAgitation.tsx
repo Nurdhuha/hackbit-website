@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { studioData } from "@/config/studio-data";
@@ -165,35 +165,30 @@ function MobileVisualItem({ index, scrollYProgress }: { index: number, scrollYPr
 
 // ─── Visual Components (Point 4: Micro-animations) ──────────────────────────
 
-// 408 Timeout — with glitch/flicker effect
-function LoadingErrorVisual({ scrollYProgress, index }: { scrollYProgress: MotionValue<number>, index: number }) {
-    const start = index / TOTAL;
-    const animStart = start + 0.05;
-
+// Manual Process Overhead
+function ManualProcessVisual({ scrollYProgress, index }: { scrollYProgress: MotionValue<number>, index: number }) {
     return (
         <div className="flex flex-col items-center justify-center p-4 sm:p-12 bg-red-950/20 rounded-2xl sm:rounded-3xl border border-red-500/20 backdrop-blur-md shadow-2xl w-full max-w-[240px] sm:max-w-sm">
-            <Clock className="w-8 h-8 sm:w-16 sm:h-16 text-red-500 mb-3 sm:mb-8 opacity-40 animate-pulse" />
+            <Clock className="w-8 h-8 sm:w-16 sm:h-16 text-red-500 mb-3 sm:mb-8 opacity-40 animate-spin-slow" />
             <div className="relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-red-500/20 blur-3xl animate-pulse rounded-full" />
                 <div className="relative w-20 h-20 sm:w-32 sm:h-32 rounded-full border-4 border-red-500/30 flex items-center justify-center">
                     <motion.span
-                        className="text-3xl sm:text-5xl font-black text-red-500 glitch-text"
+                        className="text-lg sm:text-2xl font-black text-red-500 glitch-text text-center leading-tight"
                         animate={{
-                            opacity: [1, 0.3, 1, 0.6, 1],
-                            x: [0, -2, 2, -1, 0],
+                            opacity: [1, 0.5, 1],
                         }}
                         transition={{
                             duration: 2,
                             repeat: Infinity,
-                            ease: "linear",
-                            delay: 0.5,
+                            ease: "linear"
                         }}
                     >
-                        408
+                        TOO<br/>SLOW
                     </motion.span>
                 </div>
             </div>
-            <p className="mt-3 sm:mt-8 text-red-400 font-mono text-[9px] sm:text-[10px] tracking-[0.3em] uppercase">REQUEST TIMEOUT</p>
+            <p className="mt-3 sm:mt-8 text-red-400 font-mono text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-center">MANUAL PROCESS<br/>OVERLOAD</p>
         </div>
     );
 }
@@ -232,9 +227,9 @@ function RevenueDropVisual({ scrollYProgress, index }: { scrollYProgress: Motion
                         animate={{ opacity: [1, 0.5, 1] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
                     >
-                        -7%
+                        -30%
                     </motion.p>
-                    <p className="text-orange-400/60 text-[10px] font-mono tracking-tighter mt-1 uppercase">LOSS / SEC</p>
+                    <p className="text-orange-400/60 text-[10px] font-mono tracking-tighter mt-1 uppercase">WASTED TIME</p>
                 </div>
             </div>
         </div>
@@ -245,11 +240,11 @@ function RevenueDropVisual({ scrollYProgress, index }: { scrollYProgress: Motion
 function ComparisonTable({ scrollYProgress, index }: { scrollYProgress: MotionValue<number>, index: number }) {
     return (
         <div className="bg-neutral-900/60 backdrop-blur-lg rounded-2xl sm:rounded-2xl p-4 sm:p-8 border border-neutral-800 shadow-2xl w-full max-w-[240px] sm:max-w-sm">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500 mb-4 sm:mb-6">Performance</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500 mb-4 sm:mb-6">Efisiensi Operasional</p>
             <div className="space-y-4 sm:space-y-5">
                 {studioData.problem.comparison.map((item, idx) => {
-                    const isGood = item.value.includes("<");
-                    const targetWidth = isGood ? 13 : 82;
+                    const isGood = item.color.includes("green");
+                    const targetWidth = isGood ? 95 : 30;
                     return (
                         <div key={idx} className="space-y-2">
                             <div className="flex justify-between items-baseline text-white">
@@ -272,7 +267,7 @@ function ComparisonTable({ scrollYProgress, index }: { scrollYProgress: MotionVa
     );
 }
 
-const VISUALS = [LoadingErrorVisual, RevenueDropVisual, ComparisonTable];
+const VISUALS = [ManualProcessVisual, RevenueDropVisual, ComparisonTable];
 
 // ─── Dynamic Background Glow (Point 7) ──────────────────────────────────────
 function DynamicBackground({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
@@ -307,9 +302,15 @@ export default function ProblemAgitation() {
         setMounted(true);
     }, []);
 
-    const { scrollYProgress } = useScroll({
+    const { scrollYProgress: rawScrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
+    });
+
+    const scrollYProgress = useSpring(rawScrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
     });
 
     return (
