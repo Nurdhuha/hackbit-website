@@ -49,7 +49,7 @@ export default function AutomationExplanation() {
         <section id="automation" ref={containerRef} className="relative bg-neutral-950">
             {mounted ? (
                 <>
-                    <div className="sticky top-0 h-[100dvh] w-full flex flex-col justify-start md:justify-center items-center pt-24 md:pt-0 pb-10 md:pb-0 overflow-y-auto overflow-x-hidden border-y border-neutral-900">
+                    <div className="sticky top-0 h-dvh w-full flex flex-col justify-start md:justify-center items-center pt-24 md:pt-0 pb-10 md:pb-0 overflow-y-auto overflow-x-hidden border-y border-neutral-900">
                         {/* Background Glows */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-brand-green/5 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none" />
                         
